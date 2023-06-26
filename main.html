@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Memory Game</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+  <!-- Start of the main Page -->
+  <div class="main-page">
+    <!-- Start of the container -->
+    <div class="container">
+      <!-- Start of the Navigator -->
+      <nav>
+        <div class="name"> Hello <span></span> </div>
+        <div class="score">Tries: <span></span> </div>
+      </nav>
+      <!-- End of the Navigator -->
+      
+      <div class="game">
+        <div class="message">
+          <div>
+            <label class="request" for="name" >Please Enter Your Name</label>
+            <input id="name" type="text" placeholder="write your name here">
+          </div>
+          <div class="category">
+            <label class="request" for="">Choose your Category</label>
+            <input type="radio" name="category" id="champions" checked>
+            <label name="category" for="champions">LOL Champions</label>
+
+            <input type="radio" name="category" id="emojis" >
+            <label name="category" for="emojis" >Emojis</label>
+            
+          </div>
+          <div>
+            <label class="request">Choose the Difficulty</label>
+            <input type="radio" name="difficulty" id="easy">
+            <label name="difficulty" for="easy">Easy</label>
+
+            <input type="radio" name="difficulty" id="medium" checked>
+            <label name="difficulty" for="medium">Medium</label>
+
+            <input type="radio" name="difficulty" id="hard">
+            <label name="difficulty" for="hard">Hard</label>
+            
+            <input type="radio" name="difficulty" id="veryHard">
+            <label name="difficulty" for="veryHard">Very Hard</label>
+          </div>
+          <div>
+            <button type="submit" value="submit" onclick="startGame()">Start the game!</button>
+          </div>
+        </div>
+      <div class="blocks">
+
+        <div class="block champions" data-match = "aatrox">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/RiotX_ChampionList_aatrox.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="block champions" data-match = "ahri">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/RiotX_ChampionList_ahri.jpg">
+            </div>
+          </div> 
+        </div>
+
+        <div class="block champions" data-match = "akali">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/RiotX_ChampionList_akali.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="block champions" data-match = "akshan">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/RiotX_ChampionList_akshan_v2.jpg">
+            </div>
+          </div> 
+        </div>
+
+        <div class="block champions" data-match = "alistar">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/RiotX_ChampionList_alistar.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="block champions" data-match = "ashe">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/RiotX_ChampionList_ashe.jpg">
+            </div>
+          </div> 
+        </div>
+
+        <div class="block champions" data-match = "caitlyn">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/RiotX_ChampionList_caitlyn_v2.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="block champions" data-match = "ezreal">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/RiotX_ChampionList_ezreal.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="block champions" data-match = "jhin">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/RiotX_ChampionList_jhin.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="block champions" data-match = "katarina">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/RiotX_ChampionList_katarina.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="block champions" data-match = "leblanc">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/RiotX_ChampionList_leblanc.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="block champions" data-match = "leona">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/RiotX_ChampionList_leona.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="block champions" data-match = "lux">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/RiotX_ChampionList_lux.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="block champions" data-match = "malzahar">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/RiotX_ChampionList_malzahar.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="block champions" data-match = "masteryi">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/RiotX_ChampionList_masteryi.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="block champions" data-match = "milio">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/RiotX_ChampionList_milio.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="block champions" data-match = "rakan">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/RiotX_ChampionList_rakan.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="block champions" data-match = "thresh">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/RiotX_ChampionList_thresh.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="block champions" data-match = "veigar">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/RiotX_ChampionList_veigar.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="block champions" data-match = "vex">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/RiotX_ChampionList_vex.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="block emojis" data-match = "crying-face">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/emoji/crying-face.png">
+            </div>
+          </div>
+        </div>
+
+        <div class="block emojis" data-match = "face-blowing-a-kiss">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/emoji/face-blowing-a-kiss.png">
+            </div>
+          </div>
+        </div>
+
+        <div class="block emojis" data-match = "face-savoring-food">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/emoji/face-savoring-food.png">
+            </div>
+          </div>
+        </div>
+
+        <div class="block emojis" data-match = "screaming-in-fear">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/emoji/face-screaming-in-fear.png">
+            </div>
+          </div>
+        </div>
+
+        <div class="block emojis" data-match = "face-with-steam-from-nose">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/emoji/face-with-steam-from-nose.png">
+            </div>
+          </div>
+        </div>
+
+        <div class="block emojis" data-match = "fire">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/emoji/fire.png">
+            </div>
+          </div>
+        </div>
+
+        <div class="block emojis" data-match = "flushed-face">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/emoji/flushed-face.png">
+            </div>
+          </div>
+        </div>
+
+        <div class="block emojis" data-match = "sleeping-face">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/emoji/sleeping-face.png">
+            </div>
+          </div>
+        </div>
+
+        <div class="block emojis" data-match = "hugging-face">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/emoji/hugging-face.png">
+            </div>
+          </div>
+        </div>
+
+        <div class="block emojis" data-match = "pngwing.com (4)">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/emoji/pngwing.com (4).png">
+            </div>
+          </div>
+        </div>
+
+        <div class="block emojis" data-match = "pouting-face">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/emoji/pouting-face.png">
+            </div>
+          </div>
+        </div>
+
+        <div class="block emojis" data-match = "rolling-on-the-floor-laughing">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/emoji/rolling-on-the-floor-laughing.png">
+            </div>
+          </div>
+        </div>
+
+        <div class="block emojis" data-match = "smiling-face-with-halo">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/emoji/smiling-face-with-halo.png">
+            </div>
+          </div>
+        </div>
+
+        <div class="block emojis" data-match = "smiling-face-with-heart-eyes">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/emoji/smiling-face-with-heart-eyes.png">
+            </div>
+          </div>
+        </div>
+
+        <div class="block emojis" data-match = "smiling-face-with-hearts">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/emoji/smiling-face-with-hearts.png">
+            </div>
+          </div>
+        </div>
+
+        <div class="block emojis" data-match = "smiling-face-with-smiling-eyes">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/emoji/smiling-face-with-smiling-eyes.png">
+            </div>
+          </div>
+        </div>
+
+        <div class="block emojis" data-match = "smiling-face-with-sunglases">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/emoji/smiling-face-with-sunglases.png">
+            </div>
+          </div>
+        </div>
+
+        <div class="block emojis" data-match = "star-struck">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/emoji/star-struck.png">
+            </div>
+          </div>
+        </div>
+
+        <div class="block emojis" data-match = "winking-face">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/emoji/winking-face.png">
+            </div>
+          </div>
+        </div>
+
+        <div class="block emojis" data-match = "zany-face">
+          <div class="card">
+            <div class="back"></div>
+            <div class="front">
+              <img src="imgs/emoji/zany-face.png">
+            </div>
+          </div>
+        </div>
+
+      </div>  
+      </div>
+    </div>
+    <!-- End of the container -->
+  </div>
+  <!-- End of the main Page -->
+  <script type="text/javascript" src="script.js"></script>
+</body>
+</html>

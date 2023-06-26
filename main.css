@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.main-page {  
+  background-color: #19A7CE;
+  width: 100%;
+  min-height: 100vh;
+  padding: 10px 20px;
+}
+  
+.container {
+  width: 1080px;
+  margin: 0 auto;
+}
+nav {
+  border: solid 2px #146c94;
+  margin: 0px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  color: #F6F1F1;
+  font-weight: 500;
+}
+
+.game {
+  position: relative;
+    padding: 20px;
+    display: flex;
+}
+
+/* Start of the pre game message */
+.game .message {
+  position: absolute;
+  width: 800px;
+  min-height: 300px;
+  background-color: #146c94;
+  z-index: 500;
+  margin: 150px 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  gap: 30px;
+  font-size: 18px;
+  /* display: none; */
+}
+.game .message div {
+  text-align: center;
+}
+
+.game .message label {
+  margin-bottom: 10px;
+}
+.game .message label[name="difficulty"],
+.game .message label[name="category"]
+ {
+  padding: 10px 20px 10px 5px;
+}
+.game .message input[id="name"] {
+  outline: none;
+  padding: 2px;
+  text-align: center;
+}
+.game .message label.request {
+  display: block;
+}
+.game .message button[type="submit"] {
+  padding: 5px 10px;
+  font-size: 18px;
+  background-color: #19a7ce;
+}
+/* End of the pre game message */
+
+.game .blocks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.block {
+  width: 125px;
+  height: 120px;
+  perspective: 1000px;
+  cursor: pointer;
+  transition: opacity 2s;
+  display: none;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.block.flipped .card,
+.block.has-match .card {
+  transform: rotateY(180deg);
+}
+.block.has-match {
+  opacity: 0;
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.game .blocks .block .back::before {
+  content: "?";
+}
+
+.back {
+  background-color: #37306B;
+  font-size: 80px;
+  line-height: 120px;
+  text-align: center;
+  color: #F7F1E5;
+}
+
+.front { 
+  color: white;
+  transform: rotateY(180deg);
+  overflow: hidden;
+}
+
+.game .blocks .block .front img {
+  width: 115px;
+/*  height: 120px;*/
+}
